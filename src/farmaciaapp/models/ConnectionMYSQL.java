@@ -17,11 +17,18 @@ import java.util.logging.Logger;
  * @author Lenovo ideapad 330S
  */
 public final class ConnectionMYSQL implements SQLConnectionBuilder{
-    private static String DB_NAME = "pharmacy_database";
-    private static final String URL = "jdbc:mysql://localhost:3306/" + DB_NAME;
-    private static String USER = "root";
-    private static String PASS = "root";
+    private static final String DRIVER = "jdbc:mysql://";
     private static Connection conn;
+    
+    private String dbName, dbHost, dbUser, dbPass;
+    
+    public ConnectionMYSQL(String dbName, String dbHost, String dbUser, String dbPass){
+        this.dbHost = dbHost;
+        this.dbName = dbName;
+        this.dbUser = dbUser;
+        this.dbPass = dbPass;
+    }
+    
     
     @Override
     public Connection getConnection() {
@@ -31,9 +38,9 @@ public final class ConnectionMYSQL implements SQLConnectionBuilder{
             try{
                 //obtener el valor del driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
-
+                String url = DRIVER + dbHost + "/" + dbName;
                 //obtener la conexion
-                conn = DriverManager.getConnection(URL, USER, PASS);
+                conn = DriverManager.getConnection(url, dbUser, dbPass);
                 System.out.println("Connection ok");
             }catch(ClassNotFoundException e){
                 System.err.println("Error de tipo ClassNotFoundException: " +e);
@@ -70,7 +77,7 @@ public final class ConnectionMYSQL implements SQLConnectionBuilder{
 
             Connection conn = DriverManager.getConnection(""
                     + ""
-                    + "jdbc:mysql://localhost:3306", USER, PASS);
+                    + "jdbc:mysql://localhost:3306", dbUser, dbPass);
             
             while(linea!= null){
                 //System.out.println(linea);

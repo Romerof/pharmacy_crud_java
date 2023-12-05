@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class ConnectionDerby implements SQLConnectionBuilder {
     private static final String driver ="org.apache.derby.jdbc.EmbeddedDriver";
-    private static final String protocol = "jdbc:derby:/";
+    private static final String protocol = "jdbc:derby:C:/pharmacy/";
     private final String database;
     private final String user;
     private final String password;

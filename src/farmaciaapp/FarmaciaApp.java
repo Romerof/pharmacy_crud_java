@@ -8,6 +8,7 @@ import farmaciaapp.models.ConnectionDerby;
 import farmaciaapp.models.ConnectionMYSQL;
 import farmaciaapp.models.SystemConfig;
 import farmaciaapp.models.foundation.SQLConnectionBuilder;
+import farmaciaapp.views.Login;
 
 /**
  *
@@ -18,7 +19,7 @@ public class FarmaciaApp {
     public static final int  STATE_UNLOGGED = 0;
     public static final int  STATE_LOGGED = 1;
     public static int  state = 0;
-    
+    static Login loginView;
     static LoginController login;
     static SystemController system;
     
@@ -49,6 +50,7 @@ public class FarmaciaApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        loginView = new Login();
         // TODO code application logic here
         //System.out.println("");
         //categories.all().stream().map( c -> c.getName()).;
@@ -59,10 +61,10 @@ public class FarmaciaApp {
         //chequear la base de datos 
         /*SQLConnectionBuilder derbyE= new ConnectionDerby();
         derbyE.getConnection();*/
-        SystemConfig.checkDatabase();
+        if(SystemConfig.checkDatabase())
         
         //loguearse en el sistema
-        login = new LoginController( i -> AppStateChange(i));
+        login = new LoginController( i -> AppStateChange(i), loginView);
         
         
         

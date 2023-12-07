@@ -7,6 +7,7 @@ import farmaciaapp.models.Employees;
 import farmaciaapp.views.Login;
 import java.awt.event.ActionEvent;
 import java.util.function.Consumer;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class LoginController {
@@ -15,8 +16,8 @@ public class LoginController {
     public static Employee user;
     
  
-    public LoginController(Consumer<Integer> changeState){
-        this.view = new Login();
+    public LoginController(Consumer<Integer> changeState, Login view){
+        this.view = view;
         this.user = new Employee();
         this.employees = new Employees();
         
@@ -58,7 +59,6 @@ public class LoginController {
         LoginController.user = e;
     }
     
-
     
     
     

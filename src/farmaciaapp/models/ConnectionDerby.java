@@ -114,7 +114,7 @@ public class ConnectionDerby implements SQLConnectionBuilder {
             if(rs.next()) return true;
         }catch(SQLException e){
             Logger.getLogger(ConnectionMYSQL.class.getName()).log(Level.SEVERE, null, e);
-            System.out.println("problema sql: " + e.getErrorCode()+" -> " + e.getMessage());
+            System.out.println("problema sql en ConnectionDerby.checkDB: " + e.getErrorCode()+" -> " + e.getMessage());
             switch (e.getErrorCode()){
                 case 1049: //base de datos no encontrada
                     System.out.println("Error de tipo SQLException: base de datos no encontrada ");

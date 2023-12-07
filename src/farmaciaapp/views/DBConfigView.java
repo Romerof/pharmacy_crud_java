@@ -16,6 +16,8 @@ public class DBConfigView extends javax.swing.JDialog {
     public DBConfigView(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**
@@ -100,15 +102,15 @@ public class DBConfigView extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfigSave)
                     .addComponent(btnConfigTest))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 240));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,8 +162,8 @@ public class DBConfigView extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConfigSave;
-    private javax.swing.JButton btnConfigTest;
+    public javax.swing.JButton btnConfigSave;
+    public javax.swing.JButton btnConfigTest;
     public javax.swing.JComboBox<String> cbmConfigAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -172,7 +174,7 @@ public class DBConfigView extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     public javax.swing.JTextField txtConfigHost;
     public javax.swing.JTextField txtConfigName;
-    private javax.swing.JPasswordField txtConfigPass;
+    public javax.swing.JPasswordField txtConfigPass;
     public javax.swing.JTextField txtConfigUser;
     // End of variables declaration//GEN-END:variables
 }

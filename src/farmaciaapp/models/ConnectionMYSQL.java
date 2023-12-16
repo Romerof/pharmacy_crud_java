@@ -18,9 +18,10 @@ import java.util.logging.Logger;
  */
 public final class ConnectionMYSQL implements SQLConnectionBuilder{
     private static final String DRIVER = "jdbc:mysql://";
-    private static Connection conn;
+    private Connection conn;
     
-    private String dbName, dbHost, dbUser, dbPass;
+    private int error=0;
+    private final String dbName, dbHost, dbUser, dbPass;
     
     public ConnectionMYSQL(String dbName, String dbHost, String dbUser, String dbPass){
         this.dbHost = dbHost;
@@ -42,6 +43,7 @@ public final class ConnectionMYSQL implements SQLConnectionBuilder{
                 //obtener la conexion
                 conn = DriverManager.getConnection(url, dbUser, dbPass);
                 System.out.println("Connection ok");
+                this.error = 0;
             }catch(ClassNotFoundException e){
                 System.err.println("Error de tipo ClassNotFoundException: " +e);
             }catch(SQLException e){
@@ -49,9 +51,11 @@ public final class ConnectionMYSQL implements SQLConnectionBuilder{
                 switch (e.getErrorCode()){
                     case 1049: //base de datos no encontrada
                         System.out.println("Error de tipo SQLException: base de datos no encontrada ");
+                        this.error = SQLConnectionBuilder.ERROR_BAD_DATABASE;
                         break;
-                    case 1045: //base de datos no encontrada
+                    case 1045: //usurio o contraseña
                         System.out.println("Error de tipo SQLException: el usuario o contraseña de la base de datos es incorrecto ");
+                        this.error = SQLConnectionBuilder.ERROR_INCORRECT_USER;
                         break;
                     default:
                         System.out.println("Error de tipo SQLException: (" +e.getErrorCode()+") "+e.getMessage());
@@ -59,7 +63,6 @@ public final class ConnectionMYSQL implements SQLConnectionBuilder{
                 }
             }
         }//else 
-        
         
         return conn;
     }
@@ -113,7 +116,12 @@ public final class ConnectionMYSQL implements SQLConnectionBuilder{
 
     @Override
     public boolean checkDB() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.getConnection() != null;
+    }
+
+    @Override
+    public int getError() {
+        return this.error;
     }
     
     

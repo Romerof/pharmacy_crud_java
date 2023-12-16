@@ -29,6 +29,7 @@ public class ConnectionDerby implements SQLConnectionBuilder {
     private final String password;
     private static Connection conn;
     private static File source;
+    private int error =0;
     
     public ConnectionDerby( String database, String user, String password, File source){
         this.database = database;
@@ -39,12 +40,13 @@ public class ConnectionDerby implements SQLConnectionBuilder {
     
     @Override
     public Connection getConnection() {
-        if(this.conn == null)
+        if(ConnectionDerby.conn == null)
             try{
                 Class.forName(driver); //org.apache.derby.jdbc.EmbeddedDriver
-                this.conn = DriverManager.getConnection(protocol + database + "; create = true;" , user, password);
+                ConnectionDerby.conn = DriverManager.getConnection(protocol + database + "; create = true;" , user, password);
 
                 System.out.println("derby ok");
+                this.error = 0;
             }catch(SQLException e){
                 System.out.println("problema sql: " + e.getErrorCode()+" -> " + e.getMessage());
             } catch (ClassNotFoundException ex) {
@@ -131,6 +133,11 @@ public class ConnectionDerby implements SQLConnectionBuilder {
             }
         }
         return true;
+    }
+
+    @Override
+    public int getError() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

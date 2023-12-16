@@ -26,7 +26,7 @@ public class FarmaciaApp {
     
     
     static void AppStateChange(int newState){
-            System.out.println("metodo ejecutado: " + newState);
+            System.out.println("metodo AppStateChange  ejecutado: " + newState);
             switch(newState){
             case STATE_UNLOGGED:
                 
@@ -50,24 +50,32 @@ public class FarmaciaApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        loginView = new Login();
         // TODO code application logic here
-        //System.out.println("");
-        //categories.all().stream().map( c -> c.getName()).;
-        //SystemConfig.SQL_CONNECTION_PROVIDER = new ConnectionMYSQL();
-        /*SQLConnectionBuilder mysql = new ConnectionMYSQL();
-        mysql.Build();*/
+        SystemConfig.onFinishedConfiguration = d -> init();
         
-        //chequear la base de datos 
-        /*SQLConnectionBuilder derbyE= new ConnectionDerby();
-        derbyE.getConnection();*/
-        if(SystemConfig.checkDatabase())
-        
-        //loguearse en el sistema
-        login = new LoginController( i -> AppStateChange(i), loginView);
+      
+        if(SystemConfig.checkConfig()) 
+            if(SystemConfig.checkDatabase()){
+                //conectarse a la base de datos e iniciar el sistema
+                init();
+            }else   
+                SystemConfig.BuildDatabase();
+        else SystemConfig.Build();
+            
         
         
         
+        
+    
+
+        
+        
+    }
+    
+    public static void init(){
+        /*loginView = new Login();
+        login = new LoginController( i -> AppStateChange(i), loginView);  */
+        System.out.println("iniciar el sistema!! ______________________");
     }
     
 }

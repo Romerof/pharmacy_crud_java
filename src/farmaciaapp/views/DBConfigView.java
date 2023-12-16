@@ -42,12 +42,13 @@ public class DBConfigView extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         txtConfigPass = new javax.swing.JPasswordField();
         btnConfigSave = new javax.swing.JButton();
-        btnConfigTest = new javax.swing.JButton();
+        lblFeedback = new javax.swing.JLabel();
+        cbCreate = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Configuración de base de datos");
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jPanel1.setLayout(new java.awt.GridLayout(5, 2, 0, 10));
 
@@ -57,7 +58,7 @@ public class DBConfigView extends javax.swing.JDialog {
         cbmConfigAdmin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MySQL", "Derby", "Derby Embebido" }));
         jPanel1.add(cbmConfigAdmin);
 
-        jLabel2.setText("Host");
+        jLabel2.setText("Servidor");
         jPanel1.add(jLabel2);
 
         txtConfigHost.setText("localhost:3306");
@@ -70,6 +71,10 @@ public class DBConfigView extends javax.swing.JDialog {
 
         jLabel3.setText("Nombre");
         jPanel1.add(jLabel3);
+
+        txtConfigName.setEditable(false);
+        txtConfigName.setText("pharmacy_database");
+        txtConfigName.setEnabled(false);
         jPanel1.add(txtConfigName);
 
         jLabel4.setText("Usuario");
@@ -82,21 +87,26 @@ public class DBConfigView extends javax.swing.JDialog {
 
         btnConfigSave.setText("Guardar");
 
-        btnConfigTest.setText("Probar");
+        lblFeedback.setText("Ingrese los datos de conexion");
+        lblFeedback.setToolTipText("");
+
+        cbCreate.setSelected(true);
+        cbCreate.setText("Crear si no existe");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lblFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnConfigTest)
+                        .addComponent(cbCreate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnConfigSave))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,13 +114,15 @@ public class DBConfigView extends javax.swing.JDialog {
                 .addGap(15, 15, 15)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnConfigSave)
-                    .addComponent(btnConfigTest))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(cbCreate))
+                .addGap(18, 18, 18)
+                .addComponent(lblFeedback)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 250));
+        getContentPane().add(jPanel2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,7 +175,7 @@ public class DBConfigView extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnConfigSave;
-    public javax.swing.JButton btnConfigTest;
+    public javax.swing.JCheckBox cbCreate;
     public javax.swing.JComboBox<String> cbmConfigAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -172,6 +184,7 @@ public class DBConfigView extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    public javax.swing.JLabel lblFeedback;
     public javax.swing.JTextField txtConfigHost;
     public javax.swing.JTextField txtConfigName;
     public javax.swing.JPasswordField txtConfigPass;

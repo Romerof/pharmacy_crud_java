@@ -13,10 +13,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/models/ConnectionMYSQL.java</file>
-            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/resources/cfg.sql</file>
             <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/models/SystemConfig.java</file>
             <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/FarmaciaApp.java</file>
             <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/views/DBConfigView.java</file>
+            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/models/foundation/SQLConnectionBuilder.java</file>
         </group>
     </open-files>
 </project-private>

@@ -27,9 +27,16 @@ public class SystemConfig {
     public static SQLConnectionBuilder SQL_CONNECTION_PROVIDER;
     
     private static CData data;
-    private boolean configExist =false;
-    private boolean configDataExist =false;
-    private boolean dataBaseExist =false;
+
+    public static void initConfiguration() {
+        if (checkConfig() && checkDatabase()){
+            onFinishedConfiguration.accept(data);
+        }else{
+            Build();
+        }
+    }
+
+    //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     
     private static SQLConnectionBuilder configConnection = new ConnectionDerby(
             "pharmacy_cfg",
@@ -38,7 +45,7 @@ public class SystemConfig {
             new File(System.getProperty("user.dir") +"\\src\\farmaciaapp\\resources\\cfg.sql")
     );
     
-    public static boolean checkConfig(){
+    private static boolean checkConfig(){
          // chequear si existe la base de datos de configuracion
         if (configConnection.checkDB()){
             System.out.println("Cargando configuración...");
@@ -50,10 +57,19 @@ public class SystemConfig {
             
         return true;
     }
+    
             
-    public static boolean checkDatabase(){
-        //if (SQL_CONNECTION_PROVIDER.checkDB()==null) SQL_CONNECTION_PROVIDER.checkDB() = new  
-        return SQL_CONNECTION_PROVIDER == null;
+    private static boolean checkDatabase(){
+        if (SQL_CONNECTION_PROVIDER == null){
+            if(data == null) throw new UnsupportedOperationException("datos de configuracion no cargados"); 
+            SQL_CONNECTION_PROVIDER = new ConnectionMYSQL(
+                    data.dbName, 
+                    data.dbHost, 
+                    data.dbUser, 
+                    data.dbPassword
+            );
+        }
+        return SQL_CONNECTION_PROVIDER.checkDB();
     }
 
     private static CData selectData(){
@@ -81,10 +97,11 @@ public class SystemConfig {
     //embargo, por causas practicas se hizo la mas sencillo podible.
     
     
-    public static void Build(){
+    private static void Build(){
         JOptionPane.showMessageDialog(
                 null, 
-                "No se ha encontrado un archivo de configuracion previo, se creara uno nuevo",
+                "No se ha encontrado un archivo de configuracion previo, o esta"
+                + " datañado, crearemos uno nuevo",
                 "Instalacion",
                 JOptionPane.INFORMATION_MESSAGE
         );
@@ -112,8 +129,11 @@ public class SystemConfig {
                 insertData(d);
                 a.lblFeedback.setForeground(Color.GREEN);
                 a.lblFeedback.setText("Conexion correcta!");
-                JOptionPane.showMessageDialog(a, "Configuracuion Establecida");
+                JOptionPane.showMessageDialog(a, "Configuracuion Establecida, se iniciara el sistema");
                 a.dispose();
+                install.dispose();
+                if (onFinishedConfiguration != null) onFinishedConfiguration.accept(d);
+                
             }else{
                 a.lblFeedback.setForeground(Color.red);
                 
@@ -124,9 +144,11 @@ public class SystemConfig {
                         break;
                     case SQLConnectionBuilder.ERROR_BAD_DATABASE:
                         if(a.cbCreate.isSelected()){
-                            a.lblFeedback.setText("Creando base de datos... presione guardar");
+                            a.lblFeedback.setText("Creando base de datos...");
                             SQL_CONNECTION_PROVIDER.Build();
+                            JOptionPane.showMessageDialog(a, "Base de datos creada!");
                             insertData(d);
+                            
                         }else{
                             a.lblFeedback.setText("Base de datos \""+d.dbName+"\" no encontrada");
                         }
@@ -135,7 +157,6 @@ public class SystemConfig {
                         a.lblFeedback.setText("Conexion fallida");
                 }
             }
-            if (onFinishedConfiguration != null) onFinishedConfiguration.accept(d);
         });
     }
     
@@ -156,7 +177,7 @@ public class SystemConfig {
     }
     
     
-    public static void BuildDatabase(){
+    private static void BuildDatabase(){
         SQL_CONNECTION_PROVIDER.Build();
     }
     

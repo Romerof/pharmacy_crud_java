@@ -51,31 +51,15 @@ public class FarmaciaApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        SystemConfig.onFinishedConfiguration = d -> init();
         
-      
-        if(SystemConfig.checkConfig()) 
-            if(SystemConfig.checkDatabase()){
-                //conectarse a la base de datos e iniciar el sistema
-                init();
-            }else   
-                SystemConfig.BuildDatabase();
-        else SystemConfig.Build();
-            
+        //Se supone que esto se ejecuta luego de comprobar las configuraciones de la app. 
+        SystemConfig.onFinishedConfiguration = d -> {
+            loginView = new Login();
+            login = new LoginController( i -> AppStateChange(i), loginView); 
+        };
         
-        
-        
-        
-    
-
-        
-        
+        SystemConfig.initConfiguration();
+   
     }
-    
-    public static void init(){
-        /*loginView = new Login();
-        login = new LoginController( i -> AppStateChange(i), loginView);  */
-        System.out.println("iniciar el sistema!! ______________________");
-    }
-    
+        
 }

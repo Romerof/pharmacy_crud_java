@@ -15,7 +15,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        setVisible(false);
+        setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 

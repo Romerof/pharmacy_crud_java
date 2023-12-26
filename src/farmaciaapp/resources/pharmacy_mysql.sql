@@ -226,3 +226,4 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 INSERT INTO `pharmacy_database`.`employees` (`id`, `full_name`, `username`, `password`) VALUES ('1', 'root', 'root', 'root');
+INSERT INTO `pharmacy_database`.`categories` (`name` ) VALUES ('Sin categoria')

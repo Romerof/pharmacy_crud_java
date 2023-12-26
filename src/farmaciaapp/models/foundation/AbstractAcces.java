@@ -105,6 +105,11 @@ public abstract class AbstractAcces<T extends DataObject>
     protected abstract String deleteQuery();
     protected abstract void setDeleteStatementParams(PreparedStatement stm, T dto)throws SQLException;
 
+    /**
+     * this method returns true if the element is removed, else returns false. 
+     * @param dto
+     * @return true if element dto is removed, false if an exception occurse
+     */
     @Override
     public boolean delete(T dto){
         PreparedStatement stm;

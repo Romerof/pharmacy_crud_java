@@ -50,7 +50,7 @@ public class SystemConfig {
         if (configConnection.checkDB()){
             System.out.println("Cargando configuración...");
             CData tempData = selectData();
-            System.out.println(tempData);
+            //System.out.println(tempData);           
             if(tempData != null) data = tempData;
             else    return false;
         }else   return false;

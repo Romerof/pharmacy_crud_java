@@ -14,6 +14,11 @@ import java.util.ArrayList;
 public interface Queryable<T extends DataObject>{
     boolean insert(T dto);
     boolean update(int dtoId, T dto);
+     /**
+     * this method returns true if the element is removed, else returns false. 
+     * @param dto
+     * @return true if element dto is removed, false if an exception occurse
+     */
     boolean delete(T dto);
     ArrayList<T> selectAll();
     int getLastInsertedId();

@@ -97,7 +97,17 @@ public abstract class AbstractController <T extends DataObject> {
     protected void delete() {
         int row = getViewTable().getSelectedRow(); 
         if(row >= 0){
-            this.model.remove(row);
+            T temp = this.model.remove(row);
+            if (temp == null) {
+                // to do: prodria hacer una lista de los asociados y mostrarla, pero no quiero complicarme.
+                JOptionPane.showMessageDialog(
+                        view, 
+                        "El elemento seleccionado ha sido asociado a otro \n"
+                                + "elemento, y  no puede ser eliminado hasta que se \n"
+                                + "eliminen sus dependencias. Sin embargo si es posible \n"
+                                + "modificarlo, pero esto afectara sus dependencias."
+                );
+            }
             this.getViewTable().updateUI();
         }else{
             JOptionPane.showMessageDialog(view, "Debe seleccionar un elemento de la lista");

@@ -12,11 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/controllers/ProductController.java</file>
+            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/models/foundation/AbstractController.java</file>
+            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/views/SystemView.java</file>
             <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/models/SystemConfig.java</file>
             <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/FarmaciaApp.java</file>
-            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/views/DBConfigView.java</file>
-            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/views/Login.java</file>
-            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/controllers/LoginController.java</file>
+            <file>file:/C:/Users/Levono%20ideapad%20330S/Documents/NetBeansProjects/FarmaciaApp/src/farmaciaapp/resources/pharmacy_mysql.sql</file>
         </group>
     </open-files>
 </project-private>

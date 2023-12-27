@@ -17,17 +17,9 @@ public class SystemView extends javax.swing.JFrame {
      */
     public SystemView() {
         initComponents();
-        SettingController sc= new SettingController();
-        this.lblProducts.addMouseListener(sc);
-        this.lblCategories.addMouseListener(sc);
-        this.lblCustomer.addMouseListener(sc);
-        this.lblEmployees.addMouseListener(sc);
-        this.lblPurchases.addMouseListener(sc);
-        this.lblReports.addMouseListener(sc);
-        this.lblSettings.addMouseListener(sc);
-        this.lblSuppliers.addMouseListener(sc);
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
         
     }
 
@@ -42,23 +34,6 @@ public class SystemView extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jPanelProducts = new javax.swing.JPanel();
-        lblProducts = new javax.swing.JLabel();
-        jPanelPurchases = new javax.swing.JPanel();
-        lblPurchases = new javax.swing.JLabel();
-        jPanelCustomers = new javax.swing.JPanel();
-        lblCustomer = new javax.swing.JLabel();
-        jPanelEmployees = new javax.swing.JPanel();
-        lblEmployees = new javax.swing.JLabel();
-        jPanelSuppliers = new javax.swing.JPanel();
-        lblSuppliers = new javax.swing.JLabel();
-        jPanelCategories = new javax.swing.JPanel();
-        lblCategories = new javax.swing.JLabel();
-        jPanelReports = new javax.swing.JPanel();
-        lblReports = new javax.swing.JLabel();
-        jPaneSettings = new javax.swing.JPanel();
-        lblSettings = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -276,117 +251,6 @@ public class SystemView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1210, 680));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(18, 35, 61));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanelProducts.setBackground(new java.awt.Color(18, 35, 61));
-        jPanelProducts.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelProducts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblProducts.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblProducts.setForeground(new java.awt.Color(255, 255, 255));
-        lblProducts.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblProducts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/producto.png"))); // NOI18N
-        lblProducts.setText("   Productos");
-        lblProducts.setToolTipText("");
-        lblProducts.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanelProducts.add(lblProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPanelProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 35));
-
-        jPanelPurchases.setBackground(new java.awt.Color(18, 35, 61));
-        jPanelPurchases.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelPurchases.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblPurchases.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblPurchases.setForeground(new java.awt.Color(255, 255, 255));
-        lblPurchases.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/purchases.png"))); // NOI18N
-        lblPurchases.setText("   Compras");
-        lblPurchases.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanelPurchases.add(lblPurchases, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPanelPurchases, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 200, 35));
-
-        jPanelCustomers.setBackground(new java.awt.Color(18, 35, 61));
-        jPanelCustomers.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelCustomers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblCustomer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblCustomer.setForeground(new java.awt.Color(255, 255, 255));
-        lblCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/customer-review.png"))); // NOI18N
-        lblCustomer.setText("   Clientes");
-        lblCustomer.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanelCustomers.add(lblCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPanelCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 35));
-
-        jPanelEmployees.setBackground(new java.awt.Color(18, 35, 61));
-        jPanelEmployees.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelEmployees.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblEmployees.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblEmployees.setForeground(new java.awt.Color(255, 255, 255));
-        lblEmployees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/employee.png"))); // NOI18N
-        lblEmployees.setText("   Empleados");
-        lblEmployees.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanelEmployees.add(lblEmployees, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPanelEmployees, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 200, 35));
-
-        jPanelSuppliers.setBackground(new java.awt.Color(18, 35, 61));
-        jPanelSuppliers.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelSuppliers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblSuppliers.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblSuppliers.setForeground(new java.awt.Color(255, 255, 255));
-        lblSuppliers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/proveedor.png"))); // NOI18N
-        lblSuppliers.setText("   Proveedores");
-        lblSuppliers.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanelSuppliers.add(lblSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPanelSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 200, 35));
-
-        jPanelCategories.setBackground(new java.awt.Color(18, 35, 61));
-        jPanelCategories.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelCategories.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblCategories.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblCategories.setForeground(new java.awt.Color(255, 255, 255));
-        lblCategories.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/rompecabezas.png"))); // NOI18N
-        lblCategories.setText("   Categorias");
-        lblCategories.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanelCategories.add(lblCategories, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPanelCategories, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 200, 35));
-
-        jPanelReports.setBackground(new java.awt.Color(18, 35, 61));
-        jPanelReports.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelReports.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblReports.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblReports.setForeground(new java.awt.Color(255, 255, 255));
-        lblReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/analitica.png"))); // NOI18N
-        lblReports.setText("   Reportes");
-        lblReports.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanelReports.add(lblReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPanelReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 200, 35));
-
-        jPaneSettings.setBackground(new java.awt.Color(18, 35, 61));
-        jPaneSettings.setForeground(new java.awt.Color(255, 255, 255));
-        jPaneSettings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblSettings.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblSettings.setForeground(new java.awt.Color(255, 255, 255));
-        lblSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/caja.png"))); // NOI18N
-        lblSettings.setText("  Configuraciones");
-        lblSettings.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPaneSettings.add(lblSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 35));
-
-        jPanel1.add(jPaneSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 200, 35));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 200, 580));
-
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -420,10 +284,12 @@ public class SystemView extends javax.swing.JFrame {
         });
         jPanel3.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 0, 100, 100));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1008, 100));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 0, 1010, 100));
 
+        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setToolTipText("");
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(0, 51, 102));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -581,7 +447,7 @@ public class SystemView extends javax.swing.JFrame {
         });
         jPanel4.add(txtProductSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 200, -1));
 
-        jTabbedPane1.addTab("Productos", jPanel4);
+        jTabbedPane1.addTab("   Productos          ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/producto.png")), jPanel4); // NOI18N
 
         jPanel5.setBackground(new java.awt.Color(0, 51, 102));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -787,7 +653,7 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 890, 210));
 
-        jTabbedPane1.addTab("Compras", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/caja.png")), jPanel5); // NOI18N
+        jTabbedPane1.addTab("  Compras            ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/caja.png")), jPanel5, ""); // NOI18N
         jPanel5.getAccessibleContext().setAccessibleName("");
 
         jPanel12.setBackground(new java.awt.Color(0, 51, 102));
@@ -1036,7 +902,7 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel12.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 890, 170));
 
-        jTabbedPane1.addTab("Venta", jPanel12);
+        jTabbedPane1.addTab("   Venta                  ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/purchases.png")), jPanel12); // NOI18N
 
         jPanel6.setBackground(new java.awt.Color(0, 51, 102));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1182,7 +1048,8 @@ public class SystemView extends javax.swing.JFrame {
         txtClientSearch.setToolTipText("");
         jPanel6.add(txtClientSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 160, -1));
 
-        jTabbedPane1.addTab("Clientes", jPanel6);
+        jTabbedPane1.addTab("   Clientes               ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/customer-review.png")), jPanel6, ""); // NOI18N
+        jPanel6.getAccessibleContext().setAccessibleDescription("");
 
         jPanel7.setBackground(new java.awt.Color(0, 51, 102));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1380,7 +1247,7 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel7.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 870, 170));
 
-        jTabbedPane1.addTab("Empleados", jPanel7);
+        jTabbedPane1.addTab("   Empleados         ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/employee.png")), jPanel7); // NOI18N
 
         jPanel8.setBackground(new java.awt.Color(0, 51, 102));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1552,7 +1419,7 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel8.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 890, 170));
 
-        jTabbedPane1.addTab("Proveedores", jPanel8);
+        jTabbedPane1.addTab("   Proveedores       ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/proveedor.png")), jPanel8, ""); // NOI18N
 
         jPanel9.setBackground(new java.awt.Color(0, 51, 102));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1669,7 +1536,7 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel9.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 70, 390, 220));
 
-        jTabbedPane1.addTab("Categoria", jPanel9);
+        jTabbedPane1.addTab("   Categoria            ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/categorias.png")), jPanel9); // NOI18N
 
         jPanel10.setBackground(new java.awt.Color(0, 51, 102));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1728,7 +1595,7 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel10.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 330, 410));
 
-        jTabbedPane1.addTab("Reportes", jPanel10);
+        jTabbedPane1.addTab("   Reportes             ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/analitica.png")), jPanel10); // NOI18N
 
         jPanel11.setBackground(new java.awt.Color(0, 51, 102));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1844,9 +1711,9 @@ public class SystemView extends javax.swing.JFrame {
 
         jPanel11.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 20, 920, 370));
 
-        jTabbedPane1.addTab("Perfil", jPanel11);
+        jTabbedPane1.addTab("   Perfil                   ", new javax.swing.ImageIcon(getClass().getResource("/farmaciaapp/images/rompecabezas.png")), jPanel11); // NOI18N
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 1010, 580));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1210, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1942,11 +1809,13 @@ public class SystemView extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                System.out.println(info.getClassName());
+                if ("WindowsLookAndFeel".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
+            javax.swing.UIManager.setLookAndFeel(new javax.swing.plaf.metal.MetalLookAndFeel());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(SystemView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -2068,8 +1937,6 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPaneSettings;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -2089,13 +1956,6 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPanel jPanelCategories;
-    private javax.swing.JPanel jPanelCustomers;
-    private javax.swing.JPanel jPanelEmployees;
-    private javax.swing.JPanel jPanelProducts;
-    private javax.swing.JPanel jPanelPurchases;
-    private javax.swing.JPanel jPanelReports;
-    private javax.swing.JPanel jPanelSuppliers;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -2111,14 +1971,6 @@ public class SystemView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     public javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblCategories;
-    private javax.swing.JLabel lblCustomer;
-    private javax.swing.JLabel lblEmployees;
-    private javax.swing.JLabel lblProducts;
-    private javax.swing.JLabel lblPurchases;
-    private javax.swing.JLabel lblReports;
-    private javax.swing.JLabel lblSettings;
-    private javax.swing.JLabel lblSuppliers;
     public javax.swing.JTable tblCategory;
     public javax.swing.JTable tblClient;
     public javax.swing.JTable tblEmploy;

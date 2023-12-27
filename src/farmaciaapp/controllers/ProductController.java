@@ -59,21 +59,29 @@ public class ProductController extends AbstractController<Product>{
             super.errorMsg += "  Precio: Solo valores numericos (25.5)\n";
             return false;
         }
-       
+        
+        //categoria
+        if(view.cmbProductCategory.getItemCount()==0){
+            super.errorMsg += " Categoria: No se selecciono, debe ingresar\n las categorias en la pestaña de categorias.";
+            return false;
+        }
+        System.out.println(view.cmbProductCategory.getItemCount());
         return true;
     }
 
     @Override
     protected Product loadDataObject() {
-        Product temp =  new Product();
         
+        
+        Product temp =  new Product();
+
         temp.setId(view.txtProductId.getText().trim().isEmpty() ? -1 : Integer.parseInt(view.txtProductId.getText()));
         temp.setCode(view.txtProductCode.getText());
         temp.setName(view.txtProductName.getText());
         temp.setDescription(view.txtProductDescription.getText());
         temp.setPrice(Double.parseDouble(this.view.txtProductPrice.getText()));
         temp.setQuantity(0);
-        
+
         String categoryName = (String) view.cmbProductCategory.getSelectedItem();
         Category tempCategory = categories
                 .all()
@@ -82,6 +90,8 @@ public class ProductController extends AbstractController<Product>{
                 .findAny()
                 .get();
         temp.setCategory(tempCategory);
+        
+        
         
         return temp;
     }
